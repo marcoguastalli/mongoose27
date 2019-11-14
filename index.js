@@ -32,4 +32,18 @@ emailInstance.save()
      console.error(err)
    })
 
+const EmailWithValidator = require('./models/EmailWithValidator.js');
+const emailWithValidatorInstance = new EmailWithValidator({
+  email: 'MAIL@HOTMAIL.COM'
+})
+
+emailWithValidatorInstance.save()
+   .then(doc => {
+     console.log(doc)
+   })
+   .catch(err => {
+     console.error(err)
+   })
+
+
 module.exports = new Database()
