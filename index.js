@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const server = '127.0.0.1:27017';
 const database = 'local';
+const databaseUser = 'local';
+const databasePswd = 'local';
 
 class Database {
   constructor() {
@@ -9,7 +11,7 @@ class Database {
   }
   
 _connect() {
-     mongoose.connect(`mongodb://${server}/${database}`)
+       mongoose.connect(`mongodb://${databaseUser}:${databasePswd}@${server}/${database}?authSource=admin`)
        .then(() => {
          console.log('Database connection successful')
        })
@@ -34,7 +36,7 @@ emailInstance.save()
 
 const EmailWithValidator = require('./models/EmailWithValidator.js');
 const emailWithValidatorInstance = new EmailWithValidator({
-  email: 'MAIL@HOTMAIL.COM'
+  email: 'IwillBeLowerCase@HOTMAIL.COM'
 })
 
 emailWithValidatorInstance.save()
