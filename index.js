@@ -21,12 +21,12 @@ _connect() {
   }
 }
 
-const EmailModel = require('./models/EmailModelSchema.js');
-const emailInstance = new EmailModel({
-  email: 'mail@gmail.com'
+const EmailModelSchema = require('./models/EmailModelSchema.js');
+const EmailModelSchemaInstance = new EmailModelSchema({
+  email: 'maimodell@gmail.com'
 })
 
-emailInstance.save()
+EmailModelSchemaInstance.save()
    .then(doc => {
      console.log(doc)
    })

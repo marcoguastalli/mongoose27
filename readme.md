@@ -20,3 +20,6 @@ db.emailwithvalidators.find();
 cd /Users/marco27/dev/repository/git/mongoose27
 node index.js
     Server running at: http://localhost:4000
+    
+## 3 - mongoose
+https://mongoosejs.com/docs/api/schema.html
