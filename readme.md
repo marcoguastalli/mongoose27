@@ -10,9 +10,13 @@ mongod --dbpath /Users/marco27/opt/mongodb-4.2.1/m27data/db  --auth
 ### login
 mongo -u local -p local 127.0.0.1:27017 --authenticationDatabase admin
 use local
+show collections
+db.emails.drop()
+db.emailwithvalidators.drop()
 ### select
 db.emails.find();
-db.emailwithvalidators.find();
+db.emailwithvalidators.find();    
+db.referenceschemas.find();    
     
 ## 2 - node
 #only 1st time: npm init -y

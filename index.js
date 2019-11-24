@@ -23,7 +23,7 @@ _connect() {
 
 const EmailModelSchema = require('./models/EmailModelSchema.js');
 const EmailModelSchemaInstance = new EmailModelSchema({
-  email: 'maimodell@gmail.com'
+  email: 'surname.name@email.com'
 })
 
 EmailModelSchemaInstance.save()
@@ -36,7 +36,7 @@ EmailModelSchemaInstance.save()
 
 const EmailWithValidator = require('./models/EmailWithValidator.js');
 const emailWithValidatorInstance = new EmailWithValidator({
-  email: 'IwillBeLowerCase@HOTMAIL.COM'
+  email: 'nAME.sURNAME@eMAIL.COM'
 })
 
 emailWithValidatorInstance.save()
@@ -46,6 +46,20 @@ emailWithValidatorInstance.save()
    .catch(err => {
      console.error(err)
    })
+
+const ReferenceSchema = require('./models/ReferenceSchema.js');
+const referenceSchema = new ReferenceSchema({
+    references: '{ref: 1}'
+})
+
+referenceSchema.save()
+   .then(doc => {
+     console.log('references saved')
+   })
+   .catch(err => {
+     console.error(err)
+   })
+
 
 
 module.exports = new Database()
